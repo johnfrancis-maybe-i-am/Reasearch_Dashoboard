@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1 class="flex-column text-center mt-3"> Acedamic Details</h1>
+
+{% if details %}
+{% for i in details %}
+<div class="container-lg mt-4 bg-opacity-25 p-3 rounded-top-2 bg-primary " style="width: 60%;">
+    <h3 > {{i.title}}</h3>
+    <p class="fw-light fst-italic ">{{i.pub_date}}</p>
+    <p>{{i.content}}</p>
+</div>
+<div class="container-lg bg-black bg-opacity-10 p-2" style="width: 60%;">
+    {% for j in i.comments.all %}
+    <p >{{j.comment}}</p>
+    {% endfor %}
+
+</div>
+
+
+{% endfor %}
+{% else %}
+<h1> no works  found ..</h1>
+{% endif %}
+
+
+
+
+
+{% endblock %}

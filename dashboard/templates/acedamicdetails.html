@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+{% if details %}
+{% for i in details %}
+<h1>{{i.title}}</h1>
+{% endfor %}
+{% else %}
+<h1> no records found ..</h1>
+{% endif %}
+
+
+
+
+
+{% endblock %}
